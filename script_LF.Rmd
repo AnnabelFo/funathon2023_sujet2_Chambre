@@ -36,8 +36,9 @@ conn <- dbConnect(Postgres(),
 # Partie 2 
 ## 2.1 Récupération d'un point 
 
-
 Création d'un object spatial grâce au packages sf
+
+
 
 
 
