@@ -1,5 +1,3 @@
-#Léna test
-
 # Application 2
 # Inspiration de https://www.insee.fr/fr/statistiques/6522912
 # Certaines cultures sont plus sensibles que d'autres à la sécheresse.
