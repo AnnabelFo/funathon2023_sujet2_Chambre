@@ -43,8 +43,7 @@ connect_to_db <- function() {
                    dbname = "defaultdb",
                    port = 5432,
                    check_interrupts = TRUE)
-  
-  return(cnx)
+  return (cnx)
 }
 
 
