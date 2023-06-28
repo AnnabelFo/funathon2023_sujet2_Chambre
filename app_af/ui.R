@@ -6,9 +6,10 @@ library(shiny)
 ui <- fluidPage(
   theme = bslib::bs_theme(bootswatch = "darkly"),
   titlePanel("Analyse du RPG"),
-  leafletOutput("carte_parcelles"),
-  numericInput(inputId = "rayon", label = "Quel est le rayon d'étude en m?",
+  leafletOutput("map"),
+  numericInput(inputId = "buffer_radius", label = "Quel est le rayon d'étude en km?",
                value = 500),
   dataTableOutput("table")
 )
 ui
+
