@@ -16,6 +16,7 @@ library(kableExtra)
 #install.packages("kableExtra")  
 #install.packages("ggplot2")
 library(ggplot2)
+library(htmlwidgets)
 
 #Connexion bd ####
 conn <- dbConnect(Postgres(),
@@ -125,7 +126,12 @@ carte_parcelles <- leaflet(parc_prox)%>%
   addMarkers(data= marqueur)
 
 carte_parcelles
-  
+
+# Pour sauvegarder la carte
+ saveWidget(widget = carte_parcelles, file = "carte_parc_prox.html")
+
+
+
 #Composition des parcelles agricoles récupérées ####
 
 nb_parcelles_tot <- nrow(parc_prox_lib)
@@ -241,8 +247,7 @@ parc_prox_lib <- parc_prox_lib%>% st_transform(2154)
    pivot_longer(cols =  c(pct_surf_local, pct_surf_dep, pct_surf_fm),
                 names_to = "echelle",
                 values_to = "pc_surface")
-   
- stat_compar_tidy 
+    stat_compar_tidy 
  
    fig <- ggplot(stat_compar_tidy,
                 aes(x = libelle_groupe_culture, y = pc_surface))+
@@ -250,6 +255,5 @@ parc_prox_lib <- parc_prox_lib%>% st_transform(2154)
               position = position_dodge())+
      coord_flip()
    
-  
   fig
   
