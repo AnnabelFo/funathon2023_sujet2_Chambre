@@ -1,5 +1,7 @@
 #Chargement des library ####
+#install.packages("RPostgres")
 library(RPostgres)
+install.packages("dplyr")
 library(dplyr)
 library(knitr)
 library(sf)
