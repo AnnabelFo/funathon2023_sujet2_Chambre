@@ -179,8 +179,6 @@ data_arra <- raster(drias_raster, layer= 8)
    region_sf <- region_sf %>%
      dplyr::filter(!(insee_reg %in% c("03", "04", "06", "01", "02", "01_SBSM")))
    
-   
-   
    # Visualisation avec geom_sf
    fig <- ggplot()+
      geom_sf(data = region_sf) +
