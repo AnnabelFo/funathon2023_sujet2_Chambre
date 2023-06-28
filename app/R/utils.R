@@ -37,14 +37,13 @@ factpal <- colorFactor(pal, lib_group_cult$code_groupe_culture)
 connect_to_db <- function() {
   # Connection à PostgreSQL
   cnx <- dbConnect(Postgres(),
-                   user = "projet-funathon",
-                   password = Sys.getenv("PASS_POSTGRESQL"),
-                   host = "postgresql-758156",
+                   user = "funathon4",
+                   password = "postgre4",
+                   host = "postgresql-758156.projet-funathon",
                    dbname = "defaultdb",
                    port = 5432,
                    check_interrupts = TRUE)
-  
-  return(cnx)
+  return (cnx)
 }
 
 
